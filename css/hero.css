@@ -1,0 +1,116 @@
+.hero {
+  padding-top: 0;
+  overflow: hidden;
+}
+.hero__container {
+  display: flex;
+  gap: var(--gap);
+}
+.hero__content {
+  flex-shrink: 0;
+  max-width: var(--width-slide);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.hero__slider-block {
+  width: calc(var(--width-slide) * 2);
+  height: var(--height-slide);
+  border-radius: 12px;
+}
+.hero__slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+.hero__slide {
+  border-radius: 12px;
+}
+.hero__title {
+  margin-bottom: 32px;
+}
+.hero__subtitle {
+  flex-grow: 1;
+  max-width: 490px;
+  text-transform: uppercase;
+}
+.hero__image {
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+}
+.hero__slider-arrows {
+  position: absolute;
+  bottom: 50px;
+  left: calc(var(--width-slide) - 50px);
+  transform: translateX(-100%);
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+}
+.hero__slider-btn {
+  border: none;
+  outline: none;
+  width: 42px;
+  height: 42px;
+  outline: none;
+  background-color: transparent;
+  background-position: center;
+  background-size: contain;
+  transition: 0.3s;
+}
+.hero__slider-btn:hover, .hero__slider-btn:focus {
+  opacity: 0.8;
+}
+.hero__slider-btn--prev {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='42' height='42' viewBox='0 0 42 42' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='42' height='42' rx='21' transform='matrix(-1 0 0 1 42 0)' fill='%23FFC700'/%3e%3cpath d='M21 27L15 21L21 15' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M27 21H15' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+}
+.hero__slider-btn--next {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='42' height='42' viewBox='0 0 42 42' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='42' height='42' rx='21' fill='%23FFC700'/%3e%3cpath d='M21 27L27 21L21 15' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M15 21H27' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e ");
+}
+
+@media (max-width: 1240px) {
+  .hero__title {
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 920px) {
+  .hero__container {
+    flex-direction: column;
+  }
+  .hero__content {
+    max-width: 100%;
+    min-height: 280px;
+  }
+  .hero__slider-block {
+    width: 100%;
+  }
+  .hero__title {
+    margin-bottom: 16px;
+  }
+  .hero__subtitle {
+    font-size: 14px;
+  }
+  .hero__slider-arrows {
+    bottom: 24px;
+    left: calc(100% - 24px);
+  }
+}
+@media (max-width: 560px) {
+  .hero__content {
+    min-height: 232px;
+  }
+  .hero__subtitle {
+    font-size: 12px;
+  }
+  .hero__slider-arrows {
+    bottom: 20px;
+    left: calc(100% - 20px);
+  }
+}

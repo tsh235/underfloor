@@ -1,0 +1,229 @@
+.calc__container {
+  display: flex;
+  gap: var(--gap);
+  justify-content: space-between;
+}
+.calc__content {
+  flex-basis: 50%;
+  max-width: var(--width-slide);
+}
+.calc__title {
+  margin-bottom: 32px;
+}
+.calc__fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.calc__fieldset + .calc__fieldset {
+  margin-top: 32px;
+}
+.calc__fieldset--size {
+  display: flex;
+  gap: var(--gap);
+}
+.calc__text {
+  font-size: 12px;
+  color: #898989;
+}
+.calc__input {
+  margin-top: 2px;
+  width: 240px;
+  padding: 15px 25px;
+  background: #FFFFFF;
+  border: 1px solid #E4E4E4;
+  border-radius: 12px;
+  appearance: none;
+  -moz-appearance: textfield;
+  outline: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.calc__input::-webkit-outer-spin-button,
+.calc__input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.calc__input:hover, .calc__input:focus {
+  border: 1px solid #FFC700;
+}
+.calc__text--legend {
+  margin-bottom: 16px;
+}
+.calc__wrap-input {
+  cursor: pointer;
+}
+.calc__wrap-input--tariff {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.calc__wrap-input--tariff:not(:last-child) {
+  margin-right: 16px;
+}
+.calc__radio {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+.calc__radio::before {
+  content: '';
+  position: absolute;
+  inset: 0; /* top0, left0, bottom0, right0 */
+  background-color: #FFFFFF;
+  border: 1px solid #E4E4E4;
+  border-radius: 50%;
+}
+.calc__radio::after {
+  content: '';
+  position: absolute;
+  /* width: 8px;
+  height: 8px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  /* вместо width, height, top, left, transform можно написать так:*/
+  inset: 0;
+  transform: scale(0.333333333333);
+  /* end вместо */
+  background-color: #232020;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.calc__radio:checked::after {
+  opacity: 1;
+}
+.calc__radio:focus::before {
+  border-color: #FFC700;
+}
+.calc__label-radio {
+  text-transform: uppercase;
+}
+.calc__submit {
+  margin-top: 65px;
+}
+.calc__order {
+  margin-left: 30px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.calc__total {
+  flex-basis: 50%;
+  max-width: var(--width-slide);
+  padding: 50px;
+  display: flex;
+  align-items: end;
+  background: url(./../img/calc-result-bg.jpg) #F8F8F8;
+  background-position: center 63%;
+  background-size: cover;
+  border-radius: 12px;
+}
+.calc__result-wrap {
+  padding: 24px;
+  flex-basis: 303px;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.calc__result-wrap > * + * {
+  margin-top: 16px;
+}
+.calc__result {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+}
+
+@media (max-width: 1240px) {
+  .calc__title {
+    margin-bottom: 24px;
+  }
+  .calc__fieldset + .calc__fieldset {
+    margin-top: 24px;
+  }
+  .calc__input {
+    width: 185px;
+  }
+  .calc__submit {
+    margin-top: 34px;
+  }
+  .calc__order {
+    margin-left: 20px;
+  }
+  .calc__total {
+    padding: 30px;
+  }
+}
+@media (max-width: 920px) {
+  .calc__container {
+    flex-direction: column;
+  }
+  .calc__content, .calc__title {
+    max-width: 100%;
+  }
+  .calc__input {
+    padding: 6px 16px;
+    max-width: 268px;
+    width: 100%;
+  }
+  .calc__label-radio {
+    font-size: 14px;
+  }
+  .calc__submit {
+    margin-top: 36px;
+  }
+  .calc__total {
+    padding: 24px;
+    max-width: 100%;
+    min-height: 220px;
+    align-items: start;
+  }
+  .calc__text--legend {
+    margin-bottom: 8px;
+  }
+}
+@media (max-width: 560px) {
+  .calc__title {
+    margin-bottom: 16px;
+  }
+  .calc__total {
+    padding: 20px;
+  }
+}
+@media (max-width: 428px) {
+  .calc__fieldset + .calc__fieldset {
+    margin-top: 16px;
+  }
+  .calc__fieldset--size {
+    flex-direction: column;
+  }
+  .calc__input {
+    max-width: 100%;
+  }
+  .calc__wrap-input--tariff {
+    display: flex;
+  }
+  .calc__wrap-input--tariff:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+  .calc__submit {
+    margin-top: 24px;
+  }
+  .calc__total {
+    min-height: auto;
+  }
+  .calc__result-wrap {
+    padding: 16px;
+    flex-basis: 100%;
+  }
+}

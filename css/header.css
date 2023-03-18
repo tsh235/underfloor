@@ -1,0 +1,24 @@
+.header {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background-color: #fff;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  width: 162px;
+}
+@media (max-width: 920px) {
+  .header__logo {
+    width: 124px;
+  }
+}
+@media (max-width: 920px) {
+  .header {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
